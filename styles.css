@@ -1,0 +1,3382 @@
+:root {
+    --brown: rgba(37, 25, 21, 1);
+    --dark-brown: rgba(17, 9, 6);
+    --shadow-brown: rgba(18, 10, 7);
+    --bone-white: rgb(249, 246, 238);
+    --ivory: rgb(255, 255, 240);
+    --yellow-metal: #73683b;
+    --linen: #faf0e6;
+    --dark-green: #023020;
+
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: var(--brown);
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+}
+
+.nav-logo {
+    width: 120px;
+    height: 40px;
+    padding-top: 8px;
+    padding-left: 30px;
+}
+
+.navlinks {
+    width: 50%;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.navlink {
+    font-size: 12px;
+    color: var(--bone-white);
+    font-family: "manrope";
+    font-weight: 400;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+}
+
+.navlink:hover {
+    font-weight: bold;
+}
+
+.navlink:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -3px;
+    height: 1px;
+    background-color: white;
+}
+
+.navlink.active {
+    font-weight: bold;
+    content: '';
+    left: 0;
+    right: 0;
+    text-decoration-thickness: 1px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+#hamburger-icon {
+    display: none;
+}
+
+.hamburger-links {
+    display: none;
+}
+
+.hero-page {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('assets/hero-bg.png');
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-content {
+    width: 1024px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#hero-logo {
+    width: 320px;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+    padding-top: 5%;
+}
+
+.hero-main {
+    padding-top: 2%
+}
+
+#hero-slogan {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    letter-spacing: 4px;
+    line-height: 1.3;
+    padding: 0;
+    margin: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: lighter;
+    align-self: flex-end;
+    padding-bottom: 10px;
+}
+
+.hero-btns {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#reserve-btn, #find-btn {
+    width: 350px;
+    height: 50px;
+    font-size: 1rem;
+    background-color: rgba(17, 9, 6, .5);
+    color: var(--bone-white);
+    border: 2px solid var(--yellow-metal);
+    font-family: "Marcellus SC";
+    letter-spacing: 3px;
+    font-weight: lighter;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+#reserve-btn {
+    border: 2px solid var(--yellow-metal);
+    background: rgba( 17, 9, 6, 0.85 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    margin-right: 30px;
+    z-index: 1;
+}
+
+#reserve-btn:hover, #find-btn:hover {
+    transform: scale(1.1);
+    filter: brightness(1.5);
+}
+
+.home-board {
+    background: rgba( 17, 9, 6, 0.85 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 1024px;
+    height: 180px;
+    justify-content: space-around;
+    align-self: flex-end;
+
+}
+
+.work-sched, .warm-sched, .abholung {
+    align-self: center;
+}
+
+#work-title, #warm-title, #abhol-title {
+    font-family: "Marcellus SC";
+    font-size: 1.3rem;
+    color: var(--bone-white);
+    letter-spacing: 2px;
+    font-weight: lighter;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+#work-info, #warm-info, #abhol-info {
+    font-family: "Manrope";
+    font-size: .8rem;
+    color: var(--bone-white);
+    letter-spacing: 2px;
+    font-weight: lighter;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.homeboard-copy {
+    display: none;
+}
+
+
+.about-us {
+    height: 600px;
+    background-color: var(--dark-brown);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-border {
+    height: 100%;
+    width: 1024px;
+    display: flex;
+    align-self: center;
+    justify-content: space-around;
+}
+
+#about-pic {
+    width: 320px;
+    height: 400px;
+    align-self: center;
+}
+
+#about-decor {
+    width: 280px;
+    height: 300px;
+    margin-left: -400px;
+    margin-top: 200px;
+    opacity: 80%;
+}
+
+.about-text {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+    align-self: center;
+}
+
+#about-one {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-size: .65rem;
+    letter-spacing: 3px;
+    line-height: 3;
+    padding-bottom: 30px;
+}
+
+#about-two {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-size: .65rem;
+    letter-spacing: 3px;
+    line-height: 3;
+}
+
+#sign-pic {
+    height: 180px;
+    width: 340px;
+    margin-left: -50px;
+    padding-top: 30px;
+}
+
+.bg-decor {
+    width: 100%;
+    height: fit-content;
+    background-image: url(assets/bg-decor.jpg);
+    background-size: cover;
+    background-position: center; 
+    display: flex;
+    flex-direction: column;
+}
+
+.bestsellers {
+    overflow-x: hidden;
+    width: 100vw;
+    height: calc(100vh - 60px);
+    align-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.bestseller-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#best-title {
+    font-size: 2.3rem;
+    font-family: "Marcellus SC";
+    font-weight: lighter;
+    color: var(--bone-white);
+    letter-spacing: 5px;
+    padding-bottom: 25px;
+}
+
+#best-imgs {
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+#left-arrow, #right-arrow {
+    display: none;
+}
+
+.card {
+    transition: all 0.2s ease;
+    background-size: cover;
+    background-position: center;
+}
+
+#best-main {
+    width: 550px;
+    height: 300px;
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.dragging {
+    transition: none;
+}
+
+#best-4, #best-2 {
+    width: 400px;
+    height: 250px;
+    opacity: 20%;
+    z-index: 1;
+}
+
+#best-4:hover, #best-2:hover {
+    transform: scale(1.1);
+    opacity: 70%;
+}
+
+#best-3 {
+    display: none;
+}
+
+.best-text {
+    width: 700px;
+    height: 100px;
+    padding-top: 30px;
+}
+
+#title-main {
+    font-family: "Pinyon Script";
+    font-weight: lighter;
+    color: var(--bone-white);
+    font-size: 2.6rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#txt-main {
+    font-family: "Marcellus SC";
+    color: var(--bone-white);
+    font-weight: lighter;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-align: center;
+    font-size: .8rem;
+    padding: 0;
+    margin: 0;
+}
+
+.reviews{
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: var(--dark-brown);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#rev-title {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-size: 2.3rem;
+    letter-spacing: 5px;
+    font-weight: lighter;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#rev-gesamt {
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-size: 1rem;
+    letter-spacing: 3px;
+    display: flex;
+    justify-content: center;
+}
+
+.revcards {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 140px;
+    width: 100%;
+}
+
+.revcard-1, .revcard-2, .revcard-3, .revcard-4 {
+    width: 300px;
+    height: 369px;
+    background-color: var(--linen);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#icon-1, #icon-2, #icon-3, #icon-4 {
+    padding: 0;
+    margin: 0;
+    width: 80px;
+    height: 80px;
+    margin-top: -40px;
+    border-radius: 50px;
+}
+
+#revname-1, #revname-2, #revname-3, #revname-4 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: "Marcellus SC";
+    font-size: 1rem;
+    line-height: 1.5;
+    color: 	var(--dark-green);
+    padding-top: 20px;
+}
+
+#revhead-1, #revhead-2, #revhead-3, #revhead-4 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: "Marcellus SC";
+    font-size: .85rem;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: 	var(--dark-green);
+}
+
+#revtext-1, #revtext-2, #revtext-3, #revtext-4 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: "Manrope";
+    font-size: .65rem;
+    padding-left: 40px;
+    padding-right: 40px;
+    letter-spacing: 0px;
+    color: 	var(--dark-green);
+}
+
+.pre-footer {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 60px);
+    justify-content: center;
+}
+
+.home-ad {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#ad-txt {
+    margin: 0;
+    padding: 0;
+    color: var(--bone-white);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Marcellus SC";
+    font-weight: lighter;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    letter-spacing: 4px;
+}
+
+
+.partnerseiten {
+    width: 100%;
+    padding-top: 160px;
+}
+
+#partner-head {
+    color: var(--bone-white);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Manrope";
+    font-weight: 200;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.partner-links {
+    width: 100vw;
+    padding-top: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#amadeus, #gartenzwerg, #albufer {
+    width: 300px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#amadeus:hover, #gartenzwerg:hover, #albufer:hover {
+    transform: scale(1.1);
+    border: 1px solid var(--bone-white);
+    filter: brightness(1.5);
+}
+
+
+#amadeus {
+    background-image: url('assets/amadeus-pic.png');
+}
+
+#amadeus-logo {
+    height: 150px;
+    width: 250px;
+}
+
+#gartenzwerg {
+    background-image: url('assets/gartenzwerg-bg.png');
+    margin: 0 20px 0px 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+#gartenzwerg-logo {
+    font-family: "Unica One";
+    font-size: 2.3rem;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+    color: var(--bone-white);
+}
+
+#albufer {
+    background-image: url('assets/albufer-pic.png');
+}
+
+#albufer-logo {
+    height: 150px;
+    width: 200px;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+}
+
+#footer {
+    width: 100vw;
+    height: 250px;
+    background-color: var(--brown);
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+}
+
+#footer-logo {
+    width: 250px;
+    height: 90px;
+    padding-top: 60px;
+    display: flex;
+    padding-left: 20px;
+}
+
+.time-info-1, .time-info-2 {
+    padding-top: 60px;
+}
+
+#foot-head-1, #foot-head-2  {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-size: .80rem;
+    text-align: left;
+}
+
+#foot-txt-1, #foot-txt-2 {
+    color: var(--bone-white);
+    font-family: "Manrope";
+    font-size: .45rem;
+    letter-spacing: 1px;
+    text-align: center;
+    line-height: 3;
+}
+
+.socmed {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    flex-wrap: wrap;
+    padding-top: 60px;
+}
+
+#socmed-head, #kontakt-head {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-size: .80rem;
+}
+
+.socmed-icons {
+    display: flex;
+    width: 110px;
+    justify-content: space-between;
+}
+
+#SvgjsSvg1016, #SvgjsSvg1041, #SvgjsSvg1011 {
+    cursor: pointer;
+    transition: fill 0.3s ease;
+}
+
+.socmed-icons svg:hover {
+    fill: var(--yellow-metal);
+}
+
+.kontakt-infos {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-right: 20px;
+}
+
+.telefon-info, .email-info, .address-info {
+    display: flex;
+}
+
+#telefon-txt, #email-txt, #address-txt {
+    color: var(--bone-white);
+    padding: 0;
+    margin: 0;
+    font-family: "Manrope";
+    font-size: .55rem;
+    padding-left: 10px;
+}
+
+#address-txt {
+    line-height: 1.5;
+}
+
+
+.gallery-bg {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('assets/gallery-bg.png');
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+
+.gallery-div {
+    padding-top: 60px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    overflow: hidden;
+    position:  relative;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.gallerypic {
+    background-size: cover;
+    background-position: center;
+}
+
+#gallery-main {
+    width: 850px;
+    height: 550px;
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+#gallery-left, #gallery-right {
+    width: 350px;
+    height: 450px;
+    opacity: 40%;
+    z-index: 1;
+    display: block;
+}
+
+.galleryleft-container, .galleryright-container {
+    position: relative;
+}
+
+#gallery-arrowleft {
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+#gallery-arrowright {
+    height: 40px;
+    position: absolute;
+    top: 45%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    transform: rotate(180deg);
+    pointer-events: none;
+}
+
+#gallery-left {
+    margin-right: -15px;
+}
+
+#gallery-right {
+    margin-left: -15px;
+}
+
+#gallery-left:hover, #gallery-right:hover {
+    transform: scale(1.1);
+    opacity: 70%;
+}
+
+.hiddenpic {
+    display: none;
+}
+
+.kontakt-page {
+    height: calc(100vh - 60px);
+    background-image: url('assets/gallery-bg.png');
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    padding-top: 60px;
+}
+
+.reserve-formular {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 80vw;
+    align-items: center;
+    height: calc(90vh - 60px);
+    justify-content: space-evenly;
+}
+
+#reserve-title {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-weight: lighter;
+    font-size: 1.8rem;
+    letter-spacing: 2.5px;
+    margin: 0;
+    padding: 0;
+}
+
+#reserve-info {
+    color: var(--bone-white);
+    font-family: "Manrope";
+    font-size: .65rem;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.formdiv {
+    display: flex;
+    flex-direction: column;
+}
+
+#title-fname, #title-lname, #title-email, #title-kontakt, #title-guest, #title-sched {
+    color: var(--bone-white);
+    font-weight: bold;
+    font-family: "Manrope";
+    margin: 0;
+    padding: 0;
+    padding-bottom: 5px;
+    padding-top: 10px;
+    align-self: self-start;
+    letter-spacing: 1.5px;
+    font-size: .8rem;
+}
+
+#title-fname {
+    padding-top: 10px;
+}
+
+#form-fname, #form-lname, #form-email, #form-kontakt, #form-guest, #form-sched {
+    height: 30px;
+    width: 410px;
+    margin: 0;
+    padding: 0;
+    padding-left: 5px;
+}
+
+#formbtn-submit {
+    cursor: pointer;
+    width: 420px;
+    height: 40px;
+    margin-top: 20px;
+    background-color: rgba(17, 9, 6, .5);
+    color: var(--bone-white);
+    border: 2px solid var(--yellow-metal);
+    font-family: "Marcellus SC";
+    letter-spacing: 3px;
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+#formbtn-submit:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+}
+
+#formbtn-submit:hover {
+    transform: scale(1.05);
+    filter: brightness(2);
+}
+
+.error {
+    color: #ad2831;
+    font-size: 12px;
+    display: none;
+    font-family: "Manrope";
+}
+
+.formdiv input.invalid {
+    border-color: #ad2831;
+}
+
+.success {
+    color: green;
+    font-size: 15px;
+    display: none;
+    font-family: "Manrope";
+    padding-top: 10px;
+}
+
+.kontakt-side {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--shadow-brown);
+    margin-right: 10px;
+    height: calc(100vh - 60px);
+    justify-content: center;
+}
+
+.kontaktside-div {
+    height: calc(80vh);
+    align-content: start;
+}
+
+#side-logo {
+    width: 250px;
+    height: 90px;
+    padding: 0;
+    margin: 0;
+}
+
+.sidediv-email, .sidediv-tel, .sidediv-address, .sidediv-work, .sidediv-warm {
+    padding-top: 40px;
+}
+
+#sidetitle-work, #sidetitle-warm, #sidetitle-email, #sidetitle-tel, #sidetitle-address {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-weight: lighter;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+#sidetxt-email, #sidetxt-tel, #sidetxt-address, #sidetxt-work, #sidetxt-warm {
+    color: var(--bone-white);
+    font-family: "Manrope";
+    font-weight: lighter;
+    font-size: .65rem;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    padding-top: 5px;
+}
+
+.event-page {
+    width: 100vw;
+    height: calc(100vh - 60px);
+    padding-top: 60px;
+}
+
+.event-bg {
+    height: calc(100vh - 60px);
+    width: 100vw;
+    background-image: url(assets/eventpage-bg.png);
+    background-position: center;
+    background-size: cover;
+}
+
+.eventpage-div {
+    height: calc(90vh - 60px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.eventpage-rowdiv{
+    width: 100vw;
+    padding-top: 60px;
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.event-head {
+    background-color: var(--dark-brown);
+    display: flex;
+    height: 60px;
+    width: 100vw;
+    justify-content: center;
+}
+
+#eventhead-title {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    align-self: center;
+    letter-spacing: 3.5px;
+    font-weight: lighter;
+    font-size: 1rem;
+}
+
+#eventhead-info {
+    color: var(--bone-white);
+    font-family: "Manrope";
+    align-self: center;
+    letter-spacing: 2px;
+    padding-left: 50px;
+    font-size: .70rem;
+}
+
+.eventslogan-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#event-logo {
+    width: 350px;
+    height: 112px;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 20px;
+}
+
+#event-slogan {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-weight: lighter;
+    font-size: 1.7rem;
+    margin: 0;
+    padding: 0;
+}
+
+#event-types {
+    color: var(--bone-white);
+    font-family: "Pinyon Script";
+    font-weight: lighter;
+    font-size: 3.5rem;
+    width: 900px;
+    line-height: 1.4;
+    letter-spacing: 1.5;
+    text-align: center;
+}
+
+.eventinfo-page{
+    height: calc(100vh - 60px);
+    background-image: url(assets/bg-decor.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.eventinfo-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: calc(100vh - 60px);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.eventinfo-txtdiv{
+    height: calc(100vh - 60px);
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+}
+
+.eventinfo-txtdiv2{
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.eventinfo-txt {
+    color: var(--bone-white);
+    font-family: "Manrope";
+    font-weight: lighter;
+    font-size: .80rem;
+    letter-spacing: 2px;
+    line-height: 2;
+    text-align: left;
+}
+
+.eventinfo-imgdiv{
+    width: 40vw;
+    height: calc(100vh - 60px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-rows: repeat(4, minmax(100px, 1fr));
+}
+
+
+#eventpic-1 {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+#eventpic-2 {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+#eventpic-3 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+#eventpic-4 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+#eventpic-5 {
+    grid-area: 3 / 1 / 4 / 3;
+}
+
+#eventpic-6 {
+    grid-area: 4 / 1 / 5 / 3;
+}
+
+#eventpic-1, #eventpic-2, #eventpic-3, #eventpic-4, #eventpic-5, #eventpic-6 {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+
+#eventpic-6 {
+    background-image: url(assets/gartenzwerg-bg.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#eventpic6-logo {
+    font-family: "Unica One";
+    color: var(--bone-white);
+    font-size: 3rem;
+    word-spacing: 20px;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#eventpic-6:hover {
+    border: 1px solid var(--bone-white);
+    filter: brightness(1.5);
+}
+
+.menu-heropage {
+    height: calc(100vh - 60px);
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    padding-top: 60px;
+    background-image: url(assets/menupage-bg.jpg);
+    display: flex;
+    justify-content: right;
+}
+
+.menu-sidebar {
+    background: rgba( 17, 9, 6, 0.7 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+}
+
+#menusidebar-logo {
+    width: 280px;
+    height: 110px;
+    padding-bottom: 0px;
+}
+
+#menusidebar-link {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-weight: lighter;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    padding-top: 50px;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+#menusidebar-link:hover {
+    transform: scale(1.1);
+    color: #faca0a;
+}
+
+#sidebar-abholtitle, #sidebar-promotitle{
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-weight: lighter;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    padding: 0;
+    margin: 0;
+    padding-top: 50px;
+    text-align: center;
+}
+
+#sidebar-abholinfo, #sidebar-promoinfo {
+    color: var(--bone-white);
+    font-family: "Manrope";
+    font-weight: lighter;
+    font-size: .60rem;
+    letter-spacing: 2px;
+    word-spacing: 1.5px;
+    line-height: 2;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+
+#menukarte-page {
+    background-image: url(assets/bg-decor.jpg);
+    background-position: center;
+    background-size: cover;
+    object-fit: contain;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+#menukarte-page.active{
+    align-items: flex-end;
+}
+
+#menucat-samplesdiv {
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    overflow-y: auto;
+    height: fit-content;
+    min-height: 100vh;
+}
+
+
+.menu-category {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+#menucat-div {
+    display: flex;
+    width: 40vw;
+    height: calc(100vh - 60px);
+    align-content: center;
+    background-color: var(--dark-brown);
+    justify-content: center;
+    position: relative;
+    overflow-y: auto;
+    padding-left: 20px;
+}
+
+
+#menucat-div.active {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.menucat-div2 {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+#menucat-1:hover, #menucat-2:hover, #menucat-3:hover, #menucat-4:hover, #menucat-5:hover, #menucat-6:hover, #menucat-7:hover, #menucat-8:hover, #menucat-9:hover, #menucat-10:hover, #menucat-11:hover, #menucat-12:hover, #menucat-13:hover {
+    font-weight: bold;
+    content: '';
+    left: 0;
+    right: 0;
+    text-decoration-thickness: 1px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+#menucat-1:hover::after, #menucat-2:hover::after, #menucat-3:hover::after, #menucat-4:hover::after, #menucat-5:hover::after, #menucat-6:hover::after, #menucat-7:hover::after, #menucat-8:hover::after, #menucat-9:hover::after, #menucat-10:hover::after, #menucat-11:hover::after, #menucat-12:hover::after, #menucat-13:hover::after {
+    font-weight: bold;
+    content: '';
+    left: 0;
+    right: 0;
+    text-decoration-thickness: 1px;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+#menucat-1, #menucat-2, #menucat-3, #menucat-4, #menucat-5, #menucat-6, #menucat-7, #menucat-8, #menucat-9, #menucat-10, #menucat-11, #menucat-12, #menucat-13 {
+    color: var(--bone-white);
+    font-family: "Marcellus SC";
+    font-weight: lighter;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.specialty-dishdiv {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#specialty-title {
+    padding: 0;
+    margin: 0;
+    color: var(--bone-white);
+    font-family: "Pinyon Script";
+    font-size: 2rem;
+    font-weight: lighter;
+}
+
+#menuline {
+    transform: rotate(0deg);
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10px;
+    margin-top: 6px;
+    border: 1px solid var(--bone-white);
+}
+
+#dish-info, #dish-price {
+    margin: 0;
+    padding: 0;
+    color: var(--bone-white);
+    font-family: "Manrope";
+    font-weight: lighter;
+    letter-spacing: 2px;
+}
+
+#dish-info {
+    padding-bottom: 50px;
+    font-size: .9rem;
+}
+
+.hamburger-catdiv {
+    display: none;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    
+    .navlinks {
+        display: none;
+    }
+
+    #hamburger-icon {
+        display: flex;
+        padding-top: 14px;
+        padding-right: 20px;
+        cursor: pointer;
+    }
+
+    #ham-navdiv {
+        justify-content: center;
+        position: absolute;
+        background-color: var(--brown);
+        height: 100vh;
+        width: 100vw;
+        z-index: 999;
+        position: fixed; /* stays in the viewport */
+        top: 0;
+        left: -100vw; 
+        transition: left 0.3 ease;
+        
+    }
+
+    #ham-navdiv.active {
+        left: 0;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .no-scroll {
+        overflow: hidden;
+    }
+
+    .hamburger-links {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        align-items: center;
+        height: 100vh;
+        justify-content: space-evenly;
+    }
+
+    .ham-navlink {
+        color: var(--bone-white);
+        text-decoration: none;
+        font-family: "Marcellus SC";
+        font-weight: lighter;
+        font-size: 1.2rem;
+    }
+
+    .ham-navlink:hover {
+        font-weight: bold;
+        text-decoration: underline;
+        text-underline-offset: 10px;
+    } 
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+    #arrow-left {
+        position: absolute;
+        margin-left: -930px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    #arrow-right {
+        position: absolute;
+        margin-left: 900px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+}
+
+@media only screen and (max-width: 1400px) {
+    .reviews{
+        align-self: center;
+    }
+
+    #rev-title {
+        font-size: 2.1rem;
+        letter-spacing: 3.5px;
+    }
+
+    .revcards {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .revcard-1, .revcard-2, .revcard-3, .revcard-4 {
+        width: 230px;
+        height: 300px;
+    }
+
+    #icon-1, #icon-2, #icon-3, #icon-4 {
+        height: 70px;
+        width: 70px;
+    }
+
+    #revname-1, #revname-2, #revname-3, #revname-4 {
+        font-size: .85rem;
+    }
+
+    #revhead-1, #revhead-2, #revhead-3, #revhead-4 {
+        font-size: .70rem;
+    }
+
+    #revtext-1, #revtext-2, #revtext-3, #revtext-4 {
+        font-size: .55rem;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+}
+
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .hero-page {
+        height: 100vh;
+    }
+
+    .hero-content {
+        display: flex;
+    }
+
+    .hero-main {
+        width: 768px;
+        padding: 0;
+        margin: 0;
+        align-self: self-end;
+    }
+
+    #hero-logo {
+        display: none;
+    }
+
+    #hero-slogan {
+        padding: 0;
+        font-size: 1.9rem;
+        padding-bottom: 20px;
+    }
+
+    #reserve-btn, #find-btn {
+        width: 250px;
+        height: 40px;
+        font-size: .7rem;
+    }
+
+    .home-board {
+        width: 100%;
+        align-self: flex-end;
+    }
+
+    #work-title, #warm-title, #abhol-title {
+        font-size: 1rem;
+        padding-bottom: 20px;
+    }
+
+    #work-info, #warm-info, #abhol-info {
+        font-size: .6rem;
+    }
+   
+    .about-us {
+        height: 100vh;
+    }
+
+    .about-border {
+        width: 768px;
+    }
+    
+    #about-pic {
+        width: 230px;
+        height: 300px;
+    }
+    
+    #about-decor {
+        width: 200px;
+        height: 180px;
+        margin-left: -330px;
+        margin-top: 230px;
+    }
+    
+    #about-one {
+        font-size: .5rem;
+        letter-spacing: 2px;
+        padding-bottom: 30px;
+    }
+    
+    #about-two {
+        font-size: .5rem;
+        letter-spacing: 2px;
+    }
+    
+    #sign-pic {
+        height: 120px;
+        width: 250px;
+        margin-left: -30px;
+        padding-top: 20px;
+    }
+
+    #best-title {
+        font-size: 2rem;
+        letter-spacing: 3.5px;
+    }
+
+    #best-main {
+        width: 450px;
+        height: 300px;
+    }
+
+
+    #best-4, #best-2 {
+        width: 200px;
+        height: 280px;
+    }
+
+    .best-dots {
+        color: #515052;
+        opacity: 60%;
+        position: absolute;
+        margin-top: 330px;
+        width: 50px;
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        font-size: 28px;
+    }
+
+    .best-text {
+        width: 600px;
+    }
+
+    #title-main {
+        font-size: 2.5rem;
+    }
+
+    #txt-main {
+        letter-spacing: 2px;
+        font-size: .7rem;
+        line-height: 1.5;
+    }
+
+    .revcards{
+        flex-wrap: nowrap;
+        padding-top: 120px;
+    }
+
+    #rev-title {
+        font-size: 2rem;
+        letter-spacing: 3px;
+    }
+
+    .revcard-1, .revcard-2, .revcard-3, .revcard-4 {
+        width: 175px;
+        height: 260px;
+    }
+
+    #icon-1, #icon-2, #icon-3, #icon-4 {
+        height: 60px;
+        width: 60px;
+    }
+
+    #revname-1, #revname-2, #revname-3, #revname-4 {
+        font-size: .70rem;
+        padding-top: 15px;
+    }
+
+    #revhead-1, #revhead-2, #revhead-3, #revhead-4 {
+        font-size: .60rem;
+    }
+
+    #revtext-1, #revtext-2, #revtext-3, #revtext-4 {
+        font-size: .45rem;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #ad-txt {
+        font-size: 1.3rem;
+        letter-spacing: 3px;
+    }
+
+    .partnerseiten {
+        padding-top: 130px;
+    }
+
+    #partner-head {
+        font-size: 1rem;
+    }
+
+    #amadeus, #gartenzwerg, #albufer {
+        width: 230px;
+        height: 170px;
+    }
+
+    #amadeus-logo {
+        height: 130px;
+        width: 230px;
+    }
+
+    #gartenzwerg-logo {
+        font-size: 2rem;
+    }
+
+    #albufer-logo {
+        height: 130px;
+        width: 170px;
+    }
+
+    #footer-logo {
+        width: 180px;
+        height: 70px;
+        padding-top: 70px;
+    }
+
+    .time-info-1, .time-info-2 {
+        padding-top: 70px;
+    }
+    
+    #foot-head-1, #foot-head-2  {
+        color: var(--bone-white);
+        font-family: "Marcellus SC";
+        font-size: .80rem;
+        text-align: left;
+    }
+    
+    #foot-txt-1, #foot-txt-2 {
+        color: var(--bone-white);
+        font-family: "Manrope";
+        font-size: .45rem;
+        letter-spacing: 1px;
+        text-align: center;
+        line-height: 3;
+    }
+    
+    .socmed {
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        flex-wrap: wrap;
+        padding-top: 70px;
+    }
+    
+    #socmed-head, #kontakt-head {
+        color: var(--bone-white);
+        font-family: "Marcellus SC";
+        font-size: .80rem;
+    }
+    
+    .socmed-icons {
+        display: flex;
+        width: 110px;
+        justify-content: space-between;
+    }
+    
+    .kontakt-infos {
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 70px;
+        padding-right: 20px;
+    }
+    
+    .telefon-info, .email-info, .address-info {
+        display: flex;
+    }
+    
+    #telefon-txt, #email-txt, #address-txt {
+        color: var(--bone-white);
+        padding: 0;
+        margin: 0;
+        font-family: "Manrope";
+        font-size: .55rem;
+        padding-left: 10px;
+    }
+    
+    #address-txt {
+        line-height: 1.5;
+    }
+
+    #gallery-main {
+        width: 710px;
+        height: 500px;
+    }
+
+    #footer-logo {
+        width: 180px;
+        height: 70px;
+        padding-top: 70px;
+    }
+
+    #arrow-left {
+        position: absolute;
+        margin-left: -660px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    #arrow-right {
+        position: absolute;
+        margin-left: 630px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    .gallery-dots {
+        margin-left: 260px;
+    }
+    
+    #reserve-title {
+        font-size: 1.8rem;
+    }
+
+    #reserve-info {
+        font-size: .65rem;
+    }
+
+    #eventhead-title {
+        font-size: .80rem;
+        letter-spacing: 2px;
+    }
+
+    #eventhead-info {
+        font-size: .60rem;
+        letter-spacing: 1px;
+    }
+
+    #event-types {
+        width: 750px;
+        font-size: 2.9rem;
+        text-align: center;
+        top: 0;
+    }
+
+    .eventinfo-div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: calc(100vh - 60px);
+        align-items: center;
+    }
+
+    .eventinfo-txt {
+        font-size: .60rem;
+        letter-spacing: 1.5px;
+    }
+
+    #eventpic6-logo {
+        font-size: 2.2rem;
+    }
+
+    .menu-heropage {
+        justify-content: right;
+    }
+
+    .menu-sidebar {
+        height: fit-content;
+        width: 40vw;
+        margin-top: 40px;
+        margin-right: 40px;
+    }
+
+    #menusidebar-logo {
+        display: none;
+    }
+
+    #sidebar-abholinfo, #sidebar-abholtitle {
+        display: none;
+    }
+
+    #menusidebar-link {
+        font-size: .7rem;
+    }
+
+    .menucat-div2 {
+        width: 40vw;
+    }
+
+    .menucat {
+        font-size: .8rem;
+    }
+
+    .menu-category {
+        width: 50vw;
+    }
+
+    #specialty-title {
+        font-size: 1.7rem;
+    }
+
+    #dish-info, #dish-price {
+        font-size: .7rem;
+    }
+
+    #dish-info {
+        padding-bottom: 30px;
+    }
+
+    #gallery-main {
+        width: 450px;
+        height: 400px;
+        margin-right: 0px;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+    }
+    
+    #gallery-left, #gallery-right {
+        width: 200px;
+        height: 300px;
+    }
+
+    #arrow-left {
+        height: 30px;
+        position: absolute;
+        margin-left: -430px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    #arrow-right {
+        height: 30px;
+        position: absolute;
+        margin-left: 390px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+
+    .hero-page {
+        height: 100vh;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+    }
+
+    .hero-main {
+        width: 480px;
+        padding: 0;
+        margin: 0;
+        padding-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #hero-logo {
+        display: none;
+    }
+
+    #hero-slogan {
+        padding: 0;
+        font-size: 1.8rem;
+        padding-bottom: 30px;
+        line-height: 1.5;
+        width: 400px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #reserve-btn, #find-btn {
+        width: 65%;
+        height: 40px;
+        font-size: .7rem;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .home-board {
+        display: none;
+    }
+
+    .hbcopy-bg {
+        width: 100%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        height: 80vh;
+        justify-content: space-evenly;
+    }
+    
+    .homeboard-copy {
+        background: url("assets/bg-decor.jpg");
+        background-size: cover; 
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        height: calc(100vh - 60px);
+    }
+
+    .work-sched {
+        padding: 20px;
+    }
+
+
+    #work-title, #warm-title, #abhol-title {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+
+    #work-info, #warm-info, #abhol-info {
+        font-size: .65rem;
+        letter-spacing: 2px;
+        line-height: 2;
+        font-weight: 100;
+    }
+
+    .about-us {
+        height: calc(100vh - 60px);
+    }
+
+    .about-border {
+        flex-direction: column;
+    }
+    
+    #about-pic {
+        width: 170px;
+        height: 220px;
+        position: absolute;
+        padding-top: 210px;
+        padding-left: 150px;
+    }
+    
+    #about-one {
+        font-size: .5rem;
+        letter-spacing: 1.5px;
+        padding-top: 60px;
+        padding-bottom: 15px;
+        text-align: left;
+    }
+    
+    #about-two {
+        font-size: .5rem;
+        letter-spacing: 1.5px;
+        text-align: left;
+    }
+    
+    #sign-pic {
+        position: absolute;
+        height: 100px;
+        width: 180px;
+        margin-left: -30px;
+        padding-top: 420px;
+    }
+
+    #best-title {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        padding-bottom: 20px;
+    }
+
+    #best-main {
+        width: 280px;
+        height: 250px;
+    }
+
+    #best-4, #best-2 {
+        width: 100px;
+        height: 240px;
+    }
+
+    .best-text {
+        width: 400px;
+    }
+
+    #title-main {
+        font-size: 2rem;
+    }
+
+    #txt-main {
+        font-size: .65rem;
+        line-height: 1.5;
+        letter-spacing: 1px;
+    }
+
+    .best-dots {
+        color: #515052;
+        opacity: 60%;
+        margin-top: -45px;
+        width: 50px;
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        font-size: 28px;
+    }
+
+    #rev-title{
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        padding-top: 15px;
+    }
+
+    #rev-gesamt {
+        font-size: .70rem;
+        letter-spacing: 1.5px;
+        padding-top: 3px;
+    }
+
+    .revcards {
+        padding-top: 40px;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: auto, auto;
+        grid-template-rows: auto, auto;
+        grid-gap: 40px;
+        justify-content: center;
+    }
+
+    .revcard-1, .revcard-2, .revcard-3, .revcard-4 {
+        width: 180px;
+        height: 180px;
+    }
+
+    .revcard-1 {
+        grid-area: center;
+    }
+
+    #icon-1, #icon-2, #icon-3, #icon-4 {
+        height: 50px;
+        width: 50px;
+        margin-top: -20px;
+    }
+
+    #revname-1, #revname-2, #revname-3, #revname-4 {
+        font-size: .70rem;
+        padding-top: 5px;
+        line-height: 1.5;
+    }
+
+    #revhead-1, #revhead-2, #revhead-3, #revhead-4 {
+        font-size: .60rem;
+        padding-top: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 5px;
+    }
+
+    #revtext-1, #revtext-2, #revtext-3, #revtext-4 {
+        font-size: .45rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pre-footer{
+        height: calc(150vh - 60px);
+        justify-content: space-between;
+    }
+
+    .home-ad{
+        width: 400px;
+        align-self: center;
+    }
+
+    #ad-txt {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+        padding-top: 80px;
+    }
+
+    .partnerseiten{
+        padding-top: 0;
+    }
+
+    #partner-head{
+        font-size: 1rem;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .partner-links{
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+        padding-bottom: 40px;
+    }
+
+    #amadeus, #gartenzwerg, #albufer {
+        width: 250px;
+        height: 130px;
+        margin-bottom: 20px;
+    }
+
+    #amadeus-logo {
+        height: 120px;
+        width: 250px;
+    }
+
+    #gartenzwerg-logo {
+        font-size: 1.8rem;
+    }
+
+    #albufer-logo {
+        height: 110px;
+        width: 140px;
+    }
+
+    #footer {
+        height: calc(100vh - 60px);
+        display: grid;
+        grid-template-areas: 
+        "headLogo headLogo"
+        "time-one time-two"
+        "kontakt socmed" ;
+        justify-content: space-evenly;
+        align-content: center;
+        justify-items: center;
+    }
+
+    #footer-logo {
+        width: 280px;
+        padding: 0;
+        grid-area: headLogo;
+        justify-self: center;
+    }
+
+    .time-info-1 {
+        grid-area: time-one;
+        justify-self: start;
+    }
+
+    .time-info-2 {
+        grid-area: time-two;
+        justify-self: start;
+    }
+
+    .socmed {
+        grid-area: socmed;
+    }
+
+    .kontakt-infos {
+        grid-area: kontakt;
+    }
+
+    #gallery-main {
+        width: 450px;
+        height: 400px;
+        margin-right: 0px;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+    }
+    
+    #gallery-left, #gallery-right {
+        width: 150px;
+        height: 300px;
+    }
+
+    #arrow-left {
+        height: 30px;
+        position: absolute;
+        margin-left: -430px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    #arrow-right {
+        height: 30px;
+        position: absolute;
+        margin-left: 390px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    .gallery-dots {
+        margin-top: -35px;
+        margin-left: 160px;
+        font-size: 24px;
+        width: 150px;
+    }
+
+    .kontakt-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reserve-formular {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .kontakt-side {
+        display: none;
+    }
+
+    .reservetitle-div {
+        width: 420px;
+    }
+
+    #reserve-title {
+        font-size: 1.7rem;
+        padding-top: 50px;
+    }
+
+    #reserve-info {
+        font-size: .65rem;
+    }
+
+    #title-fname, #title-lname, #title-email, #title-kontakt, #title-guest, #title-sched {
+        font-size: .90rem;
+    }
+
+    #eventhead-title {
+        font-size: .60rem;
+        padding-left: 20px;
+    }
+
+    #eventhead-info {
+        font-size: .40rem;
+        padding-left: 0;
+        padding-right: 20px;
+    }
+
+    #event-logo{
+        width: 300px;
+        height: 100px;
+        padding: 0;
+        margin: 0;
+    }
+
+    #event-slogan {
+        font-size: 1.2rem;
+    }
+
+    #event-types {
+        width: 450px;
+        font-size: 2.5rem;
+    }
+
+    .eventinfo-page {
+        height: calc(200vh - 120px);
+    }
+
+    #event-types {
+        font-size: 2.2rem;
+    }
+
+    .eventinfo-div {
+        height: calc(200vh - 120px);
+        flex-direction: column;
+    }
+
+    .eventinfo-txtdiv {
+        width: 100%;
+        justify-content: space-evenly;
+        height: calc(100vh - 60px);
+    }
+
+    .eventinfo-imgdiv {
+        width: 100%;
+        height: calc(100vh - 60px);
+    }
+
+    .eventinfo-txt {
+        font-size: .55rem;
+    }
+
+    #eventpic6-logo {
+        font-size: 2rem;
+    }
+
+    .menu-heropage {
+        justify-content: right;
+    }
+
+    .menu-sidebar {
+        height: fit-content;
+        width: 60vw;
+        margin-top: 40px;
+        margin-right: 40px;
+    }
+
+    #menusidebar-logo {
+        display: none;
+    }
+
+    #sidebar-abholinfo, #sidebar-abholtitle {
+        display: none;
+    }
+
+    #menusidebar-link {
+        font-size: .7rem;
+    }
+
+    #menukarte-page {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #menucat-div {
+        display: none;
+    }
+
+    #menucat-samplesdiv {
+        width: 100%;
+    }
+
+    .menu-category {
+        width: 80vw;
+    }
+
+    #specialty-title {
+        font-size: 1.7rem;
+    }
+
+    #dish-info, #dish-price {
+        font-size: .7rem;
+    }
+
+    #dish-info {
+        padding-bottom: 30px;
+    }
+
+    .hamburger-catdiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu-categories {
+        color: var(--bone-white);
+        font-family: "Marcellus SC";
+        font-weight: lighter;
+        letter-spacing: 2px;
+        font-size: 1.3rem;
+        padding-top: 10%;
+        padding-bottom: 3%;
+    }
+
+    #category {
+        margin-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .ham-menucat {
+        font-family: "Marcellus SC";
+        font-size: 1rem;
+        text-align: center;
+    }
+
+}
+
+@media only screen and (max-width: 479px) {
+
+    .hero-page {
+        height: 100vh;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        align-self: center;
+        align-items: center;
+    }
+
+    .hero-main {
+        width: 480px;
+        padding: 0;
+        margin: 0;
+        padding-top: 30px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #hero-logo {
+        display: none;
+    }
+
+    #hero-slogan {
+        padding: 0;
+        font-size: 1.6rem;
+        padding-bottom: 30px;
+        line-height: 1.5;
+        width: 300px;
+    }
+
+    .hero-btns {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #reserve-btn, #find-btn {
+        width: 65%;
+        height: 40px;
+        font-size: .7rem;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .home-board {
+        display: none;
+    }
+
+    .hbcopy-bg {
+        width: 100%;
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 80vh;
+    }
+    
+    .homeboard-copy {
+        background: url("assets/bg-decor.jpg");
+        background-size: cover; 
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        height: calc(100vh - 60px);
+    }
+
+
+    #work-title, #warm-title, #abhol-title {
+        font-size: 1rem;
+        letter-spacing: 3px;
+    }
+
+    #work-info, #warm-info, #abhol-info {
+        font-size: .55rem;
+        letter-spacing: 2px;
+        line-height: 2;
+        font-weight: 100;
+    }
+
+    #work-info {
+        padding-bottom: 50px;
+    }
+
+    .about-us {
+        height: calc(100vh - 60px);
+        max-height: 640px;
+    }
+
+    .about-border {
+        flex-direction: column;
+    }
+    
+    #about-pic {
+        width: 170px;
+        height: 220px;
+        position: absolute;
+        padding-top: 210px;
+        padding-left: 150px;
+    }
+    
+    #about-one {
+        font-size: .5rem;
+        letter-spacing: 1px;
+        padding-top: 60px;
+        padding-bottom: 15px;
+        text-align: left;
+    }
+    
+    #about-two {
+        font-size: .5rem;
+        letter-spacing: 1px;
+        text-align: left;
+    }
+    
+    #sign-pic {
+        position: absolute;
+        height: 100px;
+        width: 180px;
+        margin-left: -30px;
+        padding-top: 420px;
+    }
+
+    #best-title {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        padding-bottom: 20px;
+    }
+
+    #best-main{
+        width: 200px;
+        height: 200px;
+    }
+
+
+    #best-4, #best-2 {
+        width: 80px;
+        height: 200px;
+    }
+
+    .best-text {
+        width: 300px;
+    }
+
+    #title-main {
+        font-size: 2rem;
+        padding-bottom: 10px;
+    }
+
+    #txt-main {
+        font-size: .65rem;
+        line-height: 1.5;
+        letter-spacing: 1px;
+    }
+
+    .best-dots {
+        color: #515052;
+        opacity: 60%;
+        position: absolute;
+        width: 50px;
+        display: flex;
+        padding-top: 250px;
+        list-style-type: none;
+        font-size: 28px;
+    }
+
+    .reviews {
+        height: 150vh;
+    }
+
+    #rev-title {
+        font-size: 1.5rem;
+        letter-spacing: 3px;
+        display: none;
+    }
+
+    #rev-gesamt {
+        display: none;
+        font-size: .70rem;
+        letter-spacing: 1.5px;
+        padding-top: 3px;
+    }
+
+    .revcards {
+        padding-top: 50px;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .revcard-1, .revcard-2, .revcard-3, .revcard-4 {
+        width: 180px;
+        height: 190px;
+        margin-bottom: 30px;
+    }
+
+    #icon-1, #icon-2, #icon-3, #icon-4 {
+        height: 50px;
+        width: 50px;
+        margin-top: -20px;
+    }
+
+    #revname-1, #revname-2, #revname-3, #revname-4 {
+        font-size: .70rem;
+        padding-top: 8px;
+    }
+
+    #revhead-1, #revhead-2, #revhead-3, #revhead-4 {
+        font-size: .60rem;
+        padding-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+    }
+
+    #revtext-1, #revtext-2, #revtext-3, #revtext-4 {
+        font-size: .45rem;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pre-footer{
+        height: calc(150vh - 60px);
+        
+    }
+
+    .home-ad{
+        width: 300px;
+        align-self: center;
+    }
+
+    #ad-txt {
+        font-size: 1rem;
+        letter-spacing: 1px;
+        padding-top: 60px;
+        line-height: 2;
+        align-self: center;
+    }
+
+    #partner-head{
+        font-size: .9rem;
+        padding-bottom: 10px;
+        margin-top: -50px;
+    }
+
+    .partner-links{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #amadeus, #gartenzwerg, #albufer {
+        width: 250px;
+        height: 130px;
+        margin-bottom: 20px;
+    }
+
+    #amadeus-logo {
+        height: 120px;
+        width: 250px;
+    }
+
+    #gartenzwerg-logo {
+        font-size: 1.8rem;
+    }
+
+    #albufer-logo {
+        height: 110px;
+        width: 140px;
+    }
+
+    #footer {
+        height: calc(100vh - 60px);
+        display: grid;
+        grid-template-areas: 
+        "headLogo headLogo"
+        "time-one time-two"
+        "kontakt socmed" ;
+        justify-content: space-evenly;
+        align-content: center;
+        justify-items: center;
+    }
+
+    #footer-logo {
+        width: 280px;
+        padding: 0;
+        grid-area: headLogo;
+        justify-self: center;
+    }
+
+    .time-info-1 {
+        grid-area: time-one;
+        justify-self: start;
+    }
+
+    .time-info-2 {
+        grid-area: time-two;
+        justify-self: start;
+    }
+
+    .socmed {
+        grid-area: socmed;
+    }
+
+    .kontakt-infos {
+        grid-area: kontakt;
+    }
+
+    #gallery-main {
+        width: 450px;
+        height: 400px;
+        margin-right: 0px;
+    }
+    
+    #gallery-left, #gallery-right {
+        width: 200px;
+        height: 300px;
+    }
+
+    #arrow-left {
+        height: 30px;
+        position: absolute;
+        margin-left: -300px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    #arrow-right {
+        height: 30px;
+        position: absolute;
+        margin-left: 270px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    .gallery-dots {
+        margin-top: -30px;
+        margin-left: 120px;
+        font-size: 16px;
+        width: 100px;
+    }
+
+    .kontakt-page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .reserve-formular {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+    }
+
+    .kontakt-side {
+        display: none;
+    }
+
+    #reserve-title {
+        font-size: 1.3rem;
+        padding-top: 15px;
+    }
+
+    #reserve-info {
+        font-size: .55rem;
+    }
+
+    #title-fname, #title-lname, #title-email, #title-kontakt, #title-guest, #title-sched {
+        font-size: .80rem;
+        padding-top: 5px;
+    }
+
+    #title-fname {
+        padding-top: 15px;
+    }
+
+    #form-fname, #form-lname, #form-email, #form-kontakt, #form-guest, #form-sched {
+        width: 300px;
+        height: 28px;
+    }
+
+    #formbtn-submit {
+        width: 310px;
+        margin-top: 15px;
+    }
+
+    #eventhead-title {
+        font-size: .50rem;
+        padding-left: 20px;
+        letter-spacing: 2px;
+    }
+
+    #eventhead-info {
+        font-size: .35rem;
+        padding-right: 20px;
+        letter-spacing: 1px;
+        padding-left: 0;
+        padding-right: 30px;
+    }
+
+    #event-logo{
+        width: 260px;
+        height: 90px;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    #event-slogan {
+        font-size: .90rem;
+    }
+
+    .eventinfo-page {
+        height: calc(200vh - 120px);
+    }
+
+    #event-types {
+        width: 100vw;
+        font-size: 2rem;
+        letter-spacing: 0px;
+        line-height: 1.6;
+    }
+
+    .eventinfo-div {
+        height: calc(200vh - 120px);
+        flex-direction: column;
+    }
+
+    .eventinfo-txtdiv {
+        width: 100%;
+        justify-content: space-evenly;
+        height: calc(100vh - 60px);
+    }
+
+    .eventinfo-imgdiv {
+        width: 100%;
+        height: calc(100vh - 60px);
+    }
+
+    .eventinfo-txt {
+        font-size: .55rem;
+        letter-spacing: 1px;
+    }
+
+    #eventpic6-logo {
+        font-size: 2rem;
+    }
+
+    .menu-heropage {
+        justify-content: right;
+    }
+
+    .menu-sidebar {
+        height: fit-content;
+        width: 70vw;
+        margin-top: 40px;
+        margin-right: 20px;
+    }
+
+    #sidebar-promoinfo {
+        font-size: .5rem;
+    }
+
+    #menusidebar-logo {
+        display: none;
+    }
+
+    #sidebar-abholinfo, #sidebar-abholtitle {
+        display: none;
+    }
+
+    #menusidebar-link {
+        font-size: .7rem;
+    }
+
+    #menukarte-page {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #menucat-div {
+        display: none;
+    }
+
+    #menucat-samplesdiv {
+        width: 100%;
+    }
+
+    .menu-category {
+        width: 80vw;
+    }
+
+    #specialty-title {
+        font-size: 1.7rem;
+    }
+
+    #dish-info, #dish-price {
+        font-size: .7rem;
+    }
+
+    #dish-info {
+        padding-bottom: 30px;
+    }
+
+    .hamburger-catdiv {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #menu-categories {
+        color: var(--bone-white);
+        font-family: "Marcellus SC";
+        font-weight: lighter;
+        letter-spacing: 2px;
+        font-size: 1.3rem;
+        padding-top: 10%;
+        padding-bottom: 3%;
+    }
+
+    #category {
+        margin-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .ham-menucat {
+        font-family: "Marcellus SC";
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    #gallery-main {
+        width: 200px;
+        height: 400px;
+        margin-right: 0px;
+        background-size: cover;
+        background-position: center;
+        object-fit: cover;
+    }
+    
+    #gallery-left, #gallery-right {
+        width: 80px;
+        height: 300px;
+    }
+
+    #arrow-left {
+        height: 30px;
+        position: absolute;
+        margin-left: -430px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    #arrow-right {
+        height: 30px;
+        position: absolute;
+        margin-left: 390px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+}
+
+
+@media (orientation: landscape) and (max-width: 736px) {
+    
+    .hero-content {
+        width: 100vw;
+    }
+    
+    .hero-main {
+        width: 100vw;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding-top: 60px;
+    }
+    
+    #hero-slogan {
+        font-size: 1.4rem;
+        line-height: 1.2;
+        text-align: left;
+        width: 350px;
+    }
+
+    .hero-btns {
+        width: 250px;
+    }
+
+    #reserve-btn, #find-btn {
+        width: 250px;
+    }
+
+    .hbcopy-bg {
+        flex-direction: row;
+        justify-content: space-evenly;
+        height: 100vh;
+    }
+
+    .time-sched {
+        height: 100vh;
+        display: flex;
+        padding: 0;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #work-title, #warm-title{
+        font-size: .8rem;
+        padding-bottom: 10px;
+    }
+
+    #work-info, #warm-info, #abhol-info {
+        font-size: .6rem;
+        letter-spacing: 1px;
+    }
+
+    #work-info {
+        padding-bottom: 50px;
+    }
+
+
+    .about-border {
+        flex-direction: row;
+    }
+
+    #about-pic{
+        position: inherit;
+        padding: 0;
+        margin: 0;
+    }
+
+    #about-decor {
+        display: none;
+    }
+
+    .about-text {
+        align-content: start;
+    }
+
+    #about-one, #about-two {
+        line-height: 2;
+    }
+
+    #about-one {
+        padding-bottom: 5px;
+        padding-top: 20px;
+    }
+
+    #sign-pic {
+        position: inherit;
+        padding: 0;
+        margin: 0;
+        margin-left: -25px;
+        padding-top: 0px;
+    }
+
+    #about-pic {
+        height: 200px;
+        width: 150px;
+    }
+
+    .bestsellers {
+        align-content: center;
+    }
+
+    .bestseller-div {
+        padding: 0;
+        margin: 0;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    #best-title {
+        display: none;
+    }
+
+    #best-imgs {
+        padding: 0;
+        margin: 0;
+        width: fit-content;
+    }
+
+    .best-text {
+        width: 180px;
+        padding: 0;
+        margin: 0;
+    }
+
+    #best-main {
+        width: 200px;
+        height: 180px;
+    }
+
+    #best-4, #best-2 {
+        width: 100px;
+        height: 160px;
+    }
+
+    #title-main {
+        padding-bottom: 15px;
+    }
+
+    .best-text {
+        padding-top: 0px;
+        width: 200px;
+        height: 180px;
+    }
+
+    .reviews {
+        height: 200vh;
+    }
+
+    .pre-footer {
+        height: calc(200vh - 60px);
+        padding: 0;
+        margin: 0;
+    }
+
+    .home-ad {
+        width: 570px;
+    }
+
+    #ad-txt {
+        font-size: 1.2rem;
+        height: calc(100vh - 60px);
+    }
+
+    .partnerseiten {
+        padding: 0;
+        margin: 0;
+        height: 100vh;
+    }
+
+    #partner-head {
+        padding-top: 10px;
+        padding-bottom: 30px;
+    }
+
+    .partner-links {
+        flex-direction: row;
+        padding: 0;
+        margin: 0;
+    }
+
+    #amadeus, #gartenzwerg, #albufer {
+        width: 190px;
+    }
+
+    #amadeus-logo {
+        height: 100px;
+        width: 220px;
+    }
+
+    #gartenzwerg-logo {
+        font-size: 1.5rem;
+    }
+
+    #albufer-logo {
+        height: 100px;
+        width: 120px;
+    }
+
+    #footer {
+        display: grid;
+        grid-template-areas: 
+        "headLogo headLogo headLogo headLogo"
+        "time-one time-two socmed kontakt";
+        justify-content: space-evenly;
+        align-content: space-around;
+    }
+
+    #footer-logo {
+        grid-area: headLogo;
+    }
+
+    .time-info-1, .time-info-2, .socmed, .kontakt-infos {
+        padding: 0;
+    }
+
+    #gallery-main {
+        width: 450px;
+        height: 300px;
+        margin-right: 0px;
+    }
+    
+    #gallery-left, #gallery-right {
+        width: 200px;
+        height: 300px;
+    }
+
+    #arrow-left {
+        height: 30px;
+        position: absolute;
+        margin-left: -300px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    #arrow-right {
+        height: 30px;
+        position: absolute;
+        margin-left: 270px;
+        filter: drop-shadow(15px 4px 6px #000000);
+    }
+
+    .gallery-dots {
+        margin-top: -30px;
+        margin-left: 120px;
+        font-size: 16px;
+        width: 100px;
+    }
+
+    .kontakt-page {
+        height: 220vh;
+    }
+
+    #reserve-title {
+        padding: 0;
+    }
+
+    #formbtn-submit {
+        height: 40px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+
+    .reserve-formular {
+        height: calc(220vh - 60px);
+        justify-content: space-evenly;
+    }
+
+    .reservetitle-div {
+        width: 420px;
+    }
+
+    .event-head {
+        display: flex;
+        justify-content: space-around;
+        height: 40px;
+    }
+
+    #eventhead-title {
+        font-size: .55rem;
+        padding-left: 20px;
+        letter-spacing: 2px;
+    }
+
+    #eventhead-info {
+        font-size: .45rem;
+        padding-right: 20px;
+        letter-spacing: 1px;
+        padding-left: 0;
+        padding-right: 30px;
+    }
+
+    .eventpage-rowdiv {
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        padding: 20px;
+        margin: 0;
+    }
+
+    .eventslogan-div {
+        width: 50vw;
+    }
+
+    #event-logo{
+        width: 220px;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    #event-slogan {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    #event-types {
+        width: 50vw;
+        font-size: 1.5rem;
+        letter-spacing: 0px;
+        line-height: 1.6;
+    }
+
+    .eventpage-rowdiv {
+        width: 95vw;
+    }
+
+    .eventinfo-page {
+        height: calc(350vh - 120px);
+    }
+
+    .eventinfo-div {
+        height: calc(350vh - 120px);
+        flex-direction: column;
+        align-content: space-between;
+    }
+
+    .eventinfo-txtdiv {
+        height: 150vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 100vw;
+    }
+
+    .event-txtdiv2 {
+        height: 150vh;
+        display: flex;
+
+    }
+
+    .eventinfo-txt {
+        font-size: .70rem;
+    }
+
+    .eventinfo-imgdiv {
+        height: calc(190vh - 60px);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-template-rows: repeat(4, minmax(100px, 1fr));
+    }
+
+    #eventpic6-logo {
+        font-size: 2.5rem;
+    }
+
+    .menu-heropage {
+        justify-content: right;
+        align-items: center;
+    }
+
+    .menu-sidebar {
+        height: fit-content;
+        width: 50vw;
+        margin-top: 0px;
+        margin-right: 0px;
+    }
+
+    #sidebar-promotitle {
+        padding-top: 30px;
+    }
+
+    #sidebar-promoinfo {
+        font-size: .5rem;
+    }
+
+    #menusidebar-logo {
+        display: none;
+    }
+
+    #sidebar-abholinfo, #sidebar-abholtitle {
+        display: none;
+    }
+
+    #menusidebar-link {
+        font-size: .7rem;
+        padding-top: 20px;
+    }
+
+
+
+}
