@@ -50,10 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let startX; // starting x position of drag
 
         // initial images
-        leftImg.style.backgroundImage = 'url(assets/best-4.jpg';
-        centerImg.style.backgroundImage = 'url(assets/best-main.jpg';
-        rightImg.style.backgroundImage = 'url(assets/best-2.jpg';
-        hiddenImg.style.backgroundImage = 'url(assets/best-3.jpg';
+        leftImg.style.backgroundImage = 'url(/assets/best-4.jpg';
+        centerImg.style.backgroundImage = 'url(/assets/best-main.jpg';
+        rightImg.style.backgroundImage = 'url(/assets/best-2.jpg';
+        hiddenImg.style.backgroundImage = 'url(/assets/best-3.jpg';
 
         // mouse events for mouse and touch move for touch devices
         centerImg.addEventListener('mousedown', startDrag);
